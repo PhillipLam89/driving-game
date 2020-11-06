@@ -6,6 +6,11 @@ body {
   width: 1200px;
   margin: 0 auto;
   background-color: rgb(132, 255, 132);
+  text-align: center;
+}
+
+h2 {
+  color: darkblue;
 }
 
 img {
