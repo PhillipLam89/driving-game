@@ -1,4 +1,4 @@
-var carData = { direction: null, location: { x: 0, y: 0 } };
+var carData = { direction: null, location: { x: 0, y: 0 }, isMoving: false };
 var $car = document.querySelector('img');
 
 document.addEventListener('keydown', function (event) {
@@ -19,13 +19,17 @@ document.addEventListener('keydown', function (event) {
     carData.direction = 'west';
     $car.className = 'west';
   }
+
   if (event.key === ' ') {
-    var interval = setInterval(function () {
-      carData.location.x += 4;
-      $car.style.left = carData.location.x + 'px';
-      if (carData.location.x > 1500) { // stops when off screen
-        clearInterval(interval);
-      }
-    }, 16);
+    carData.isMoving = !carData.isMoving;
+    if (carData.isMoving === true) {
+      interval = setInterval(function () {
+        carData.location.x += 4;
+        $car.style.left = carData.location.x + 'px';
+      }, 16);
+    } else {
+      clearInterval(interval);
+    }
   }
 });
+var interval = ''; // must declare this globally
