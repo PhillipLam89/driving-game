@@ -3,11 +3,17 @@
 }
 
 body {
+  width: 1200px;
   margin: 0 auto;
   background-color: rgb(132, 255, 132);
 }
 
+img {
+  position: absolute;
+}
+
 .container {
+  position: relative;
   width: 100%;
 }
 
